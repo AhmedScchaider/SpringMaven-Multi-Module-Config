@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<configuration>
+	<property name="WEB_HOME" value="/LOCAL_LOG/logs/KHMERSIDEPRO/" />
+	<!-- <property name="WEB_HOME" value="${catalina.base}/logs/KHMERSIDEPRO/" /> -->
+	<property name="TRAN" value="${WEB_HOME}TRAN/" />
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger :: %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="TRN"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+
+			<!-- Daily rollover -->
+			<fileNamePattern>${TRAN}%d{yyyyMMdd}_TRAN.log</fileNamePattern>
+
+			<!-- Keep 30 days' worth of history -->
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger :: %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	<logger name="org.springframework" level="WARN" />
+	<logger name="org.apache.http" level="WARN" />
+	<logger name="org.hibernate" level="WARN" />
+	<!-- Configure so that it outputs to both console and log file -->
+	<root level="DEBUG">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="TRN" />
+	</root>
+</configuration>

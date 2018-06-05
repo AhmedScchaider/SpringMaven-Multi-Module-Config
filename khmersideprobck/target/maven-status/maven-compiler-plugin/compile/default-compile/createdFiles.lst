@@ -1,0 +1,12 @@
+kh\com\khmerside\startup\BackEndApp.class
+kh\com\khmerside\service\DaoService.class
+kh\com\khmerside\controller\TestCntr.class
+kh\com\khmerside\config\WebConfig.class
+kh\com\khmerside\init\StartupLoggingComponent.class
+kh\com\khmerside\viewresolver\JsonViewResolver.class
+kh\com\khmerside\config\ServiceConfig.class
+kh\com\khmerside\config\PersistanceConfig.class
+kh\com\khmerside\init\ContextInitializer.class
+kh\com\khmerside\service\SecurityService.class
+kh\com\khmerside\config\ServletConfig.class
+kh\com\khmerside\config\SimpleCorsFilter.class
